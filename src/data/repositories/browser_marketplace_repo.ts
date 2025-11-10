@@ -35,7 +35,11 @@ export class BrowserMarketplaceRepo implements MarketplaceRepo {
           port.onMessage.removeListener(listener);
 
           if (msg.success) {
-            const listings = msg.data as Listing[];
+            // Parse date strings back to Date objects
+            const listings = (msg.data as any[]).map((listing: any) => ({
+              ...listing,
+              datePosted: listing.datePosted ? new Date(listing.datePosted) : undefined,
+            })) as Listing[];
             resolve(listings);
           } else {
             console.error(
@@ -77,7 +81,11 @@ export class BrowserMarketplaceRepo implements MarketplaceRepo {
           activePort.onMessage.removeListener(listener);
 
           if (msg.success) {
-            const listings = msg.data as Listing[];
+            // Parse date strings back to Date objects
+            const listings = (msg.data as any[]).map((listing: any) => ({
+              ...listing,
+              datePosted: listing.datePosted ? new Date(listing.datePosted) : undefined,
+            })) as Listing[];
             resolve(listings);
           } else {
             console.error(
