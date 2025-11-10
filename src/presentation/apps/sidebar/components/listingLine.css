@@ -1,0 +1,71 @@
+.listing-line {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.listing-line.selected {
+  background-color: var(--selected-bg);
+  color: var(--text-primary);
+}
+
+.begin {
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  width: 100%;
+}
+
+.listing-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.listing-details {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 7px 10px;
+  max-width: 65vw;
+  cursor: pointer;
+  flex: 1;
+}
+
+.listing-title {
+  font-weight: 500;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listing-price {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.listing-location {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+.listing-marketplace {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
